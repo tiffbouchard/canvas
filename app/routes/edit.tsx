@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Dashboard } from "~/@/components/dashboard";
+import Edit from "../components/Edit";
+import { ElementProvider } from "~/components/ElementContext";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,10 +9,10 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
+export default function EditPage() {
   return (
-    <div>
-      <Dashboard/>
-    </div>
+    <ElementProvider>
+      <Edit/>
+    </ElementProvider>
   );
 }
